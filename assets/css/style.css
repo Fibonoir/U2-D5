@@ -65,6 +65,10 @@ header nav ul li:last-child {
     border-radius: 30px;
 }
 
+header nav ul li:last-child.button-scrolled {
+    background-color: #1a8917;
+}
+
 header div:last-child {
     display: flex;
     margin-right: 0;
