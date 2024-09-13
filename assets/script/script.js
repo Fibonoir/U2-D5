@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	const headerHeight = header.offsetHeight;
 	const threshold = headerHeight * 0.8;
 
-	console.log(button); // Check if the button is selected
 
 	window.addEventListener('scroll', function() {
 		if (window.scrollY > threshold) {
@@ -16,4 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
 			button.classList.remove('button-scrolled');
 		}
 	});
+
+	function getRandomSubset(arr, size) {
+		const shuffled = arr.sort(() => 0.5 - Math.random());
+		return shuffled.slice(0, size);
+	}
+
+	function toggleVisibility() {
+		const paths = document.querySelectorAll('svg path');
+		const randomPaths = getRandomSubset(Array.from(paths), Math.floor(paths.length / 4));
+		randomPaths.forEach(path => {
+			if (path.classList.contains('hidden')) {
+				path.classList.remove('hidden');
+				path.classList.add('visible');
+			} else {
+				path.classList.remove('visible');
+				path.classList.add('hidden');
+			}
+		});
+	}
+
+	setInterval(toggleVisibility, 600);
 });

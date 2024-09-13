@@ -103,6 +103,16 @@ header div:last-child {
     width: 50%;
 }
 
+.hidden {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.visible {
+opacity: 1;
+transition: opacity 0.2s ease-in-out;
+}
+
 /* stile HERO */
 
 main > div:first-child {
